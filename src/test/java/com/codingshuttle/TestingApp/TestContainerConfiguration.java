@@ -11,7 +11,9 @@ public class TestContainerConfiguration {
 
     @Bean
     @ServiceConnection
-    PostgreSQLContainer<?> postgresContainer() {
-        return new PostgreSQLContainer<>(DockerImageName.parse("postgres:latest"));
+    PostgreSQLContainer<?> postgreSQLContainer(){
+        return new PostgreSQLContainer<>(DockerImageName.parse("postgres:latest"))
+                .withCommand("postgres", "-c", "timezone=Asia/Kolkata");
+
     }
 }
