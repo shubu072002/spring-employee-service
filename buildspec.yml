@@ -10,7 +10,7 @@ phases:
       - mvn package -DskipTests
   post_build:
     commands:
-      -echo Build, Testing, Packaging completed.
+      - echo Build, Testing, Packaging completed.
 artifacts:
   files:
     - target/*.jar
